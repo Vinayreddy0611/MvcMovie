@@ -50,6 +50,10 @@ movies.
 Checked all the code that i changed to verify and display the edit error of timestamp and the price which 
 provided in the workfile.
 
+STEP7:
+Add Search
+
+
 
 
 

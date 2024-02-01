@@ -4,59 +4,65 @@ using MvcMovie.Data;
 using System;
 using System.Linq;
 
-namespace MvcMovie.Models;
-
-public static class SeedData
+namespace MvcMovie.Models
 {
-    public static void Initialize(IServiceProvider serviceProvider)
+    public static class SeedData
     {
-        using (var context = new MvcMovieContext(
-            serviceProvider.GetRequiredService<
-                DbContextOptions<MvcMovieContext>>()))
+        public static void Initialize(IServiceProvider serviceProvider)
         {
-            // Look for any movies.
-            if (context.Movie.Any())
+            using (var context = new MvcMovieContext(
+                serviceProvider.GetRequiredService<DbContextOptions<MvcMovieContext>>()))
             {
-                return;   // DB has been seeded
+                // Look for any movies.
+                if (context.Movie.Any())
+                {
+                    return;   // DB has been seeded
+                }
+
+                context.Movie.AddRange(
+                    new Movie
+                    {
+                        Title = "Raktacharithra",
+                        ReleaseDate = DateTime.ParseExact("15-04-2013", "dd-MM-yyyy", null),
+                        Genre = "Horror Thriller",
+                        Rating = "A",
+                        Price = 6.85M
+                    },
+                    new Movie
+                    {
+                        Title = "Oppenheimer ",
+                        ReleaseDate = DateTime.ParseExact("21-07-2023", "dd-MM-yyyy", null),
+                        Genre = "Biopic Drama",
+                        Rating = "R",
+                        Price = 39.29M
+                    },
+                    new Movie
+                    {
+                        Title = "I saw the Devil",
+                        ReleaseDate = DateTime.ParseExact("30-05-2010", "dd-MM-yyyy", null),
+                        Genre = "Psycho thriller",
+                        Rating = "A",
+                        Price = 12.24M
+                    },
+                    new Movie
+                    {
+                        Title = "Dabbe the possession",
+                        ReleaseDate = DateTime.ParseExact("15-04-2013", "dd-MM-yyyy", null),
+                        Genre = "Horror Thriller",
+                        Rating = "u/a",
+                        Price = 6.85M
+                    },
+                    new Movie
+                    {
+                        Title = "Inglourious basterds",
+                        ReleaseDate = DateTime.ParseExact("21-08-2009", "dd-MM-yyyy", null),
+                        Genre = "Adventure Drama",
+                        Rating = "A",
+                        Price = 15.95M
+                    }
+                );
+                context.SaveChanges();
             }
-            context.Movie.AddRange(
-                new Movie
-                {
-                    Title = "Raktacharithra",
-                    ReleaseDate = DateTime.Parse("15-04-2013"),
-                    Genre = "Horror Thriller",
-                    Price = 6.85M
-                },
-                new Movie
-                {
-                    Title = "Oppenheimer ",
-                    ReleaseDate = DateTime.Parse("21-07-2023"),
-                    Genre = "Biopic Drama",
-                    Price = 39.29M
-                },
-                new Movie
-                {
-                    Title = "I saw the Devil",
-                    ReleaseDate = DateTime.Parse("30-05-2010"),
-                    Genre = "Psycho thriller",
-                    Price = 12.24M
-                },
-                new Movie
-                {
-                    Title = "Dabbe the possession",
-                    ReleaseDate = DateTime.Parse("15-04-2013"),
-                    Genre = "Horror Thriller",
-                    Price = 6.85M
-                },
-                 new Movie
-                 {
-                     Title = "Inglourious basterds",
-                     ReleaseDate = DateTime.Parse("21-08-2009"),
-                     Genre = "Adventure Drama",
-                     Price = 15.95M
-                 }
-            ); ;
-            context.SaveChanges();
         }
     }
 }
