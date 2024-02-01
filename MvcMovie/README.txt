@@ -53,6 +53,20 @@ provided in the workfile.
 STEP7:
 Add Search
 
+I created the index of the file and changed it for adding the search single movie. then i created the new class and
+the given code.
+
+STEP8:
+Add a new field
+
+Added a new field to the model class and to get the rating field i created
+binded the given code in the create.cshtml and also in the class.
+
+Step9:
+Add validation
+
+added the validation to the class file to get the create option in the field
+and changed the code in the movie.cs class file and i got the rating field.
 
 
 
