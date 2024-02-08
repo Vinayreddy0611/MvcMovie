@@ -77,7 +77,7 @@ added the validation to the class file to get the create option in the field
 and changed the code in the movie.cs class file and i got the rating field.
 Updated the movie class file to get the create new in the movie app output which makes me to add
 the desired movie and edit too in the output itself.
-Validated the error in the title when i entered any number
+Validated the error in the title when i entered any number.
 
 
 
