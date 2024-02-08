@@ -50,7 +50,8 @@ movies.
 Checked all the code that i changed to verify and display the edit error of timestamp and the price which 
 provided in the workfile.
 
-STEP7:
+STEP7: 1/02/24
+
 Add Search
 
 I created the index of the file and changed it for adding the search single movie. then i created the new class and
