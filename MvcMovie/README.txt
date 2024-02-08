@@ -79,6 +79,12 @@ Updated the movie class file to get the create new in the movie app output which
 the desired movie and edit too in the output itself.
 Validated the error in the title when i entered any number.
 
+Step10:
+Examine the details and delete methods of ASP.NET
+
+I made sure to examine all the files and classes in the project and also delete confirmed methods of http get and post
+and ran to examine the output so that after i pushed the project to github.
+
 
 
 
